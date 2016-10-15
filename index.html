@@ -3,6 +3,24 @@
   <script src="browser-deeplink.js" type="text/javascript"></script>
 
   <script>
+
+    var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+    })(window.location.search.substr(1).split('&'));
+
+    var type = qs['type'];
+    var token = qs['token'];
+
     deeplink.setup({
         iOS: {
             appName: "myapp",
@@ -14,14 +32,18 @@
     });
 
     window.onload = function() {
-      deeplink.open("mbillsdemo://www.mbills.si/dl/?type=1&token=830025");
+      deeplink.open('mbillsdemo://www.mbills.si/dl/?type='+type+'&token='+token+');
     }
+
+    document.getElementById('form').value = type;
+    document.getElementById('token').value = token;    
+    
   </script>
 </head>
 <body>
-  <form action="mbillsdemo://www.mbills.si/dl/" target="_blank">
-    <input type="hidden" name="type" value="1" />
-    <input type="hidden" name="token" value="830025" />
+  <form id="form" action="mbillsdemo://www.mbills.si/dl/" target="_blank">
+    <input type="hidden" id="type" name="type" value="1" />
+    <input type="hidden" id="token" name="token" value="830025" />
     <input type="submit" value"Open App" />
   </form>
 </body>
