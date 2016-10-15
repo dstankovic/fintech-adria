@@ -1,0 +1,132 @@
+[{
+	"name": "INA",
+	"desc": "INA SANDWICH MAXI - with baked ham cuts of succulent baked ham covered with slices of cheese in the company of roasted red pepper and horseradish sauce.",
+	"price": 3.99,
+	"ingredients": [{
+		"desc": "a special kind of bread with seeds",
+		"percentage": 47
+	}, {
+		"desc": "baked ham",
+		"percentage": 21
+	}, {
+		"desc": "light mayonnaise",
+		"percentage": 14
+	}, {
+		"desc": "semi-hard cheese",
+		"percentage": 9
+	}, {
+		"desc": "raosted peppers",
+		"percentage": 21
+	}, {
+		"desc": "horseradish sauce",
+		"percentage": 3
+	}],
+	"allergens": [
+		"Gluten",
+		"milk",
+		"sesame seeds",
+		"eggs",
+		"mustard seeds"
+	],
+	"energy": {
+		"kj": 1015,
+		"kcal": 241
+	},
+	"image": "ina.png"
+}, {
+	"name": "Classic",
+	"desc": "Juicy slices of ham with slices of cheese and pickles. New! Maxi (260 g) and Mini (80 g).",
+	"price": 2.50,
+	"ingredients": [{
+		"desc": "Wheat white bread",
+		"percentage": 47
+	}, {
+		"desc": "ham",
+		"percentage": 17
+	}, {
+		"desc": "light mayonnaise",
+		"percentage": 14
+	}, {
+		"desc": "cheese",
+		"percentage": 11
+	}, {
+		"desc": "pickles",
+		"percentage": 11
+	}],
+	"allergens": [
+		"Gluten",
+		"milk",
+		"sesame seeds",
+		"eggs",
+		"mustard seeds"
+	],
+	"energy": {
+		"kj": 1097,
+		"kcal": 261
+	},
+	"image": "classic.png"
+}, {
+	"name": "Tuna",
+	"desc": "Succulent tuna with pickles and onions.",
+	"price": 1.99,
+	"ingredients": [{
+		"desc": "a special kind of bread with seeds",
+		"percentage": 56
+	}, {
+		"desc": "tuna",
+		"percentage": 18
+	}, {
+		"desc": "light mayonnaise",
+		"percentage": 18
+	}, {
+		"desc": "onions",
+		"percentage": 4
+	}, {
+		"desc": "pickles",
+		"percentage": 4
+	}],
+	"allergens": [
+		"Gluten",
+		"milk",
+		"sesame seeds",
+		"eggs",
+		"fish"
+	],
+	"energy": {
+		"kj": 1066,
+		"kcal": 249
+	},
+	"image": "tuna.png"
+}, {
+	"name": "Ham",
+	"desc": "Slices of delicious ham combined with green olives and slices of cheese.",
+	"price": 2.99,
+	"ingredients": [{
+		"desc": "Wheat white bread with seeds",
+		"percentage": 47
+	}, {
+		"desc": "ham",
+		"percentage": 12
+	}, {
+		"desc": "light mayonnaise",
+		"percentage": 17
+	}, {
+		"desc": "green olives",
+		"percentage": 10
+	}, {
+		"desc": "cheese",
+		"percentage": 9
+	}],
+	"allergens": [
+		"Gluten",
+		"milk",
+		"sesame seeds",
+		"eggs",
+		"mustard seeds"
+	],
+	"energy": {
+		"kj": 1260,
+		"kcal": 294
+	},
+	"image": "ham.png"
+}]
