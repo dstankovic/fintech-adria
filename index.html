@@ -14,11 +14,15 @@
     });
 
     window.onload = function() {
-        window.open("mbillsdemo://www.mbills.si/dl/?type=1&token=767608");
+      deeplink.open("mbillsdemo://www.mbills.si/dl/?type=1&token=151294");
     }
   </script>
 </head>
 <body>
-  Hello, world!
+  <form action="mbillsdemo://www.mbills.si/dl/" target="_blank">
+    <input type="hidden" name="type" value="1" />
+    <input type="hidden" name="token" value="830025" />
+    <input type="submit" value"Open App" />
+  </form>
 </body>
 </html>
