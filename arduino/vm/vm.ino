@@ -1,7 +1,6 @@
-# define PAYMENT_OK_LED  13
-# define PAYMENT_NOT_OK_LED  12
+# define PAYMENT_OK_LED  11
 # define SERVO_PORT 9
-
+# define VM_ANGLE 90
 # define ETHERNET_ENABLED true
 
 #include <Servo.h>
@@ -28,24 +27,24 @@ void ethernetSetup(){
 }
 void setup() {
   pinMode(PAYMENT_OK_LED,OUTPUT);
-  pinMode(PAYMENT_NOT_OK_LED,OUTPUT);
 #if ETHERNET_ENABLED
   ethernetSetup();
 #endif
-  vm.attach(SERVO_PORT);
+  
 }
 void paymentDone(){
+  vm.attach(SERVO_PORT);
   digitalWrite(PAYMENT_OK_LED, HIGH);
-  digitalWrite(PAYMENT_NOT_OK_LED, LOW);
-  for (pos = 0; pos <= 180; pos += 1) {
+  for (pos = 0; pos <= VM_ANGLE; pos += 1) {
     vm.write(pos);             
-    delay(15);                       
+    delay(10);                       
   }
-  for (pos = 180; pos >= 0; pos -= 1) { 
+  for (pos = VM_ANGLE; pos >= 0; pos -= 1) { 
     vm.write(pos);              
-    delay(15);                       
+    delay(10);                       
   }
-  
+  digitalWrite(PAYMENT_OK_LED, LOW);
+  vm.detach();
 }
 
 void loop() {
@@ -58,17 +57,16 @@ void waitForMessage(){
     EthernetClient client = server.available();
     if (client && client.connected()) {
       client.find("\r\n\r\n"); // Consume incoming request
-      //sendResponse(client);
+      sendOK(client);
       delay(1); // Give the Web browser time to receive the data
       client.stop();
       paymentDone();
     }  
 }
 
-void sendResponse(EthernetClient client) {
+void sendOK(EthernetClient client) {
   client.print("HTTP/1.1 200 OK\r\n");
   client.print("Connection: close\r\n");
   client.print("Content-Length: 5\r\n");
   client.print("\r\n");
-  client.print("AMK");
 } 
