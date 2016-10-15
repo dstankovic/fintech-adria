@@ -1,0 +1,82 @@
+[
+	INA : {
+		ingredients : [
+			{
+				desc : 'a special kind of bread with seeds',
+				percentage : 47
+			},
+			{
+				desc : 'baked ham',
+				percentage : 21
+			},
+			{
+				desc : 'light mayonnaise',
+				percentage : 14
+			},
+			{
+				desc : 'semi-hard cheese',
+				percentage : 9
+			},
+			{
+				desc : 'raosted peppers',
+				percentage : 21
+			},
+			{
+				desc : 'horseradish sauce',
+				percentage : 3
+			}
+		],
+		allergens : [
+			'Gluten',
+			'milk',
+			'sesame seeds',
+			'eggs',
+			'mustard seeds'
+		],
+		energy : {
+			kj : 1015 ,
+			kcal : 241
+		}
+	},
+	
+	Classic : {
+		ingredients : [
+			{
+				desc : 'a special kind of bread with seeds',
+				percentage : 47
+			},
+			{
+				desc : 'baked ham',
+				percentage : 21
+			},
+			{
+				desc : 'light mayonnaise',
+				percentage : 14
+			},
+			{
+				desc : 'semi-hard cheese',
+				percentage : 9
+			},
+			{
+				desc : 'raosted peppers',
+				percentage : 21
+			},
+			{
+				desc : 'horseradish sauce',
+				percentage : 3
+			}
+		],
+		allergens : [
+			'Gluten',
+			'milk',
+			'sesame seeds',
+			'eggs',
+			'mustard seeds'
+		],
+		energy : {
+			kj : 1015 ,
+			kcal : 241
+		}
+	},
+	
+]
