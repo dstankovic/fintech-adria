@@ -19,10 +19,12 @@ module.exports = bot(function(request, originalApiRequest) {
 		case ".":
 			{
 				return mBills.pay(100).then(function(token) {
+          console.log("Token value is ", token);
+
 					return new fbTemplate.generic()
 						.addBubble('Classic sandwich - 2.50€')
 						.addImage("https://raw.githubusercontent.com/dstankovic/fintech-adria/master/assets/img/classic.png")
-						.addButton('Pay for the item(s)', "http://dulerock.com/fintech-adria/?amount=100&token=" + token).get();
+						.addButton('Pay for the item(s)', "http://dulerock.com/fintech-adria/?type=1&token=" + token).get();
 				});
 			}
 		case "EXIT":
