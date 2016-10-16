@@ -1,5 +1,5 @@
 [{
-	"name": "INA",
+	"name": "MAXI INA sandwich",
 	"desc": "INA SANDWICH MAXI - with baked ham cuts of succulent baked ham covered with slices of cheese in the company of roasted red pepper and horseradish sauce.",
 	"price": 3.99,
 	"ingredients": [{
@@ -32,9 +32,9 @@
 		"kj": 1015,
 		"kcal": 241
 	},
-	"image": "https://github.com/dstankovic/fintech-adria/blob/master/assets/img/ina.png"
+	"image": "https://raw.githubusercontent.com/dstankovic/fintech-adria/master/assets/img/ina.png"
 }, {
-	"name": "Classic",
+	"name": "Classic sandwich",
 	"desc": "Juicy slices of ham with slices of cheese and pickles. New! Maxi (260 g) and Mini (80 g).",
 	"price": 2.50,
 	"ingredients": [{
@@ -64,9 +64,9 @@
 		"kj": 1097,
 		"kcal": 261
 	},
-	"image": "https://github.com/dstankovic/fintech-adria/blob/master/assets/img/classic.png"
+	"image": "https://raw.githubusercontent.com/dstankovic/fintech-adria/master/assets/img/classic.png"
 }, {
-	"name": "Tuna",
+	"name": "Tuna special",
 	"desc": "Succulent tuna with pickles and onions.",
 	"price": 1.99,
 	"ingredients": [{
@@ -96,9 +96,9 @@
 		"kj": 1066,
 		"kcal": 249
 	},
-	"image": "https://github.com/dstankovic/fintech-adria/blob/master/assets/img/tuna.png"
+	"image": "https://raw.githubusercontent.com/dstankovic/fintech-adria/master/assets/img/tuna.png"
 }, {
-	"name": "Ham",
+	"name": "Delicious ham sandwich",
 	"desc": "Slices of delicious ham combined with green olives and slices of cheese.",
 	"price": 2.99,
 	"ingredients": [{
@@ -128,5 +128,5 @@
 		"kj": 1260,
 		"kcal": 294
 	},
-	"image": "https://github.com/dstankovic/fintech-adria/blob/master/assets/img/ham.png"
+	"image": "https://raw.githubusercontent.com/dstankovic/fintech-adria/master/assets/img/ham.png"
 }]

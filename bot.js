@@ -1,20 +1,30 @@
 var bot = require('claudia-bot-builder');
 var fbTemplate = bot.fbTemplate;
-var fbReply = bot.fbReply;
+var rp = require('minimal-request-promise');
 var inventory = require('./inventory.json');
-var mBill = require('./mBills.js');
+var mBills = require('./mBills.js');
 
 module.exports = bot(function(request, originalApiRequest) {
-	if (request.text === "oj") {
-		fbReply(request.sender, "test", originalApiRequest)
-	} else if (request.text === "DAILY_MENU") {
+
+	if (request.text === "DAILY_MENU") {
 		return getItems().get();
 	} else if (request.text.indexOf("ORDER") === 0) {
-		mBills.pay(100, function() {
-
-		});
+		return "You will be notified when order is payed."
 	} else if (request.text === "EXIT") {
 		return "Have a nice day";
+
+	} else if (request.text === ".") {
+		return mBills.pay(100).then(function(token) {
+			return new fbTemplate.button("Button will open external app for payment purposes")
+				.addButton("Confirm purchase", "http://dulerock.com/fintech-adria/?token=" + token + "&amount=100").get()
+		});
+	} else if (request.text === "h") {
+		return new fbTemplate.button("Item is payed, want me to drop it?")
+			.addButton("Yep yep", "DROP").get()
+	} else if (request.text === "DROP") {
+		return rp.get("http://gsiot-egp6-3b0j.try.yaler.io").then(function() {
+			return "bon appétit";
+		});
 	} else {
 		return ["Hi, I'm Tomy Samwich, the guy who sells sandwiches", ,
 			new fbTemplate.button("Would you like to eat?")
@@ -28,8 +38,8 @@ module.exports = bot(function(request, originalApiRequest) {
 function getItems() {
 	var template = new fbTemplate.generic();
 	for (var i = 0; i < inventory.length; i++) {
-		template.addBubble(inventory[i].name)
-			.addImage("http://www.w3schools.com/html/pic_mountain.jpg")
+		template.addBubble(inventory[i].name + ' - ' + inventory[i].price + '€')
+			.addImage(inventory[i].image)
 			.addButton('I want this!', 'ORDER' + i);
 	}
 	return template;
