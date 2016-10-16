@@ -23,7 +23,7 @@ var pay = function(amount, callback) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: `{ \"amount\": ${amount},
+    body: `{ \"amount\": ${amount * 100},
              \"currency\": \"EUR\",
              \"purpose\": \"Online payment\",
              \"paymentreference\": \"SI0011072015\",
