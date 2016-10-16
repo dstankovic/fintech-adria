@@ -11,9 +11,11 @@
     });
 
     window.onload = function() {
-
-      deeplink.open('mbillsdemo://www.mbills.si/dl/?type=1&token=981525');
+      var tokenUrl = location.search.split('token=')[1];
+      deeplink.open('mbillsdemo://www.mbills.si/dl/?type=1&token='+token);
     }
+
+
   </script>
 </head>
 
